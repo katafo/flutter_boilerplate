@@ -15,9 +15,18 @@ class AppFontWeight {
 
 }
 
-class AppTheme {
+abstract class AppStyles {
 
-  ThemeData primary = ThemeData(
+  ThemeData themeData;
+  
+  TextStyle defaultTextStyle();
+  TextStyle defaultTextFieldStyle();
+
+}
+class DefaultAppStyles implements AppStyles {
+
+  @override
+  ThemeData themeData = ThemeData(
 
     brightness: Brightness.light,
     primaryColor: AppColors.primaryColor,
@@ -30,24 +39,12 @@ class AppTheme {
       headline6: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
       bodyText2: TextStyle(fontSize: 14, fontWeight: FontWeight.normal),
       bodyText1: TextStyle(fontSize: 16, fontWeight: FontWeight.normal),
-
     ),
 
     fontFamily: 'HelveticaNeue',
 
   );
 
-}
-
-class AppStyle {
-
-  ThemeData themeData;
-
-  AppStyle({@required this.themeData});
-
-  factory AppStyle.of(BuildContext context) {
-    return AppStyle(themeData: Theme.of(context));
-  }
 
   TextStyle defaultTextStyle() {
     return themeData.textTheme.bodyText2.copyWith(

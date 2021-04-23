@@ -1,7 +1,8 @@
 import 'package:flutter/cupertino.dart';
-import '../screens/event_details_screen.dart';
-import 'route_name.dart';
-import 'routes.dart';
+
+import '../../routers/route_name.dart';
+import '../../routers/routes.dart';
+import 'event_details_screen.dart';
 
 class EventRoutes implements RouteInterface {
 

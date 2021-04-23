@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
-import '../screens/enviroment_screen.dart';
-import 'event_routes.dart';
+
+import '../modules/enviroment_screen.dart';
+import '../modules/event/event_routes.dart';
 import 'route_name.dart';
 
 // ignore: one_member_abstracts
