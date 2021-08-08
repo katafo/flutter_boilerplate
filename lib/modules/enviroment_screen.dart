@@ -7,31 +7,26 @@ import '../configs/flavor_config.dart';
 import '../routers/route_name.dart';
 
 class EnvironmentScreen extends StatelessWidget {
+  const EnvironmentScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-
     final appCubit = context.read<AppCubit>();
 
     return Scaffold(
-      appBar: AppBar(title: Text(
-        'Environment ${FlavorConfig.instance.flavor.toString()}')
-      ),
-      body: Container(
-        child: BlocBuilder<AppCubit, AppState>(
-          builder: (context, state) {
-            return Center(
-              child: RaisedButton(
+      appBar: AppBar(
+          title:
+              Text('Environment ${FlavorConfig.instance?.flavor.toString()}')),
+      body: BlocBuilder<AppCubit, AppState>(builder: (context, state) {
+        return Center(
+            child: ElevatedButton(
                 child: Text(
-                  'Event Details', 
+                  'Event Details',
                   style: appCubit.styles.defaultTextStyle(),
                 ),
-                onPressed: () => {
-                  Navigator.pushNamed(context, RouteName.eventDetails)
-              })
-            );
-          }
-        )
-      ),
+                onPressed: () =>
+                    {Navigator.pushNamed(context, RouteName.eventDetails)}));
+      }),
     );
   }
 }

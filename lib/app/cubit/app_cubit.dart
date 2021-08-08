@@ -6,7 +6,6 @@ import '../../styles.dart';
 import 'app_state.dart';
 
 class AppCubit extends Cubit<AppState> {
-  
   AppStyles styles = DefaultAppStyles();
   AppLanguage language = AppLanguage();
 
@@ -17,14 +16,13 @@ class AppCubit extends Cubit<AppState> {
     emit(AppChangeStyleSuccess());
   }
 
-  void fetchLocale() async {
+  Future<void> fetchLocale() async {
     await language.fetchLocale();
     emit(AppLanguageFetchLocaleCompleted(Locale(language.currentLocale)));
   }
 
-  void changeLanguage(String locale) {
-    language.changeLanguage(locale);
+  Future<void> changeLanguage(String locale) async {
+    await language.changeLanguage(locale);
     emit(AppLanguageFetchLocaleCompleted(Locale(locale)));
   }
-
 }

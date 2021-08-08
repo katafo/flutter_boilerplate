@@ -5,20 +5,17 @@ import '../../routers/routes.dart';
 import 'event_details_screen.dart';
 
 class EventRoutes implements RouteInterface {
-
   @override
   CupertinoPageRoute routePage(RouteSettings settings) {
     return CupertinoPageRoute(
-      settings: settings,
-      builder: (context) {
-        switch (settings.name) {
-          case RouteName.eventDetails:
-            return EventDetailsScreen();
-          default:
-            return Container();
-        }
-      }
-    );
+        settings: settings,
+        builder: (context) {
+          switch (settings.name) {
+            case RouteName.eventDetails:
+              return const EventDetailsScreen();
+            default:
+              return Container();
+          }
+        });
   }
-
 }

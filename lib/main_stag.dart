@@ -5,8 +5,7 @@ import 'configs/flavor_config.dart';
 
 void main() {
   FlavorConfig(
-    flavor: Flavor.staging, 
-    values: FlavorValues(baseUrl: 'https://abc.com/api')
-  );
-  runApp(App());
+      flavor: Flavor.staging,
+      values: FlavorValues(baseUrl: 'https://abc.com/api'));
+  runApp(const App());
 }
